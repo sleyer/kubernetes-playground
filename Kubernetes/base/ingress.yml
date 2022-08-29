@@ -1,0 +1,16 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: python-webserver-ingress
+spec:
+  rules:
+    - host: my-cool-python-webserver.com
+      http:
+        paths:
+          - backend:
+              service:
+                name: python-webserver-service
+                port:
+                  number: 80
+            path: /
+            pathType: Prefix

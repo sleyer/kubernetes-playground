@@ -47,11 +47,11 @@ docker build --tag python-webserver .
 Now, you can run it in minikube: 
 
 ```
-kubectl apply -f manifest.yml
+kubectl apply -k ./Kubernetes/base
 ```
 
 And when you don't need it anymore, delete it:
 
 ```
-kubectl delete -f manifest.yml
+kubectl delete -k ./Kubernetes/base
 ```
