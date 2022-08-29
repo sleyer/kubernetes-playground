@@ -26,6 +26,17 @@ first port variable accordingly.
 
 ## local testsetup with minikube
 
+### Setup minikube
+
+You need to run these commands once on your machine: 
+
+```
+# no ingresses without this:
+minikube addons enable ingress 
+```
+
+### Run in minikube
+
 Build the image for the minikube docker environment: 
 
 ```
