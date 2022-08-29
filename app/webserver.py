@@ -1,7 +1,7 @@
 from http.server import BaseHTTPRequestHandler, HTTPServer
 import logging
 
-hostName = "localhost"
+hostName = "0.0.0.0"
 serverPort = 8080
 
 class HelloWorldServer(BaseHTTPRequestHandler):
