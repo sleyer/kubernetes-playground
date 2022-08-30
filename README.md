@@ -55,3 +55,9 @@ And when you don't need it anymore, delete it:
 ```
 kubectl delete -k ./Kubernetes/base
 ```
+
+# Notes
+
+This is a simple test-setup to practice Kubernetes. Therefore, both container logic and kubernetes config are kept in the same repository to keep matters simple. In a real world example, I would spread this out over two repositories. 
+
+The webserver would get versioned via tags. Based upon these, tools like github actions (or a dedicated jenkins) could automatically build it when new tags are being created. 
