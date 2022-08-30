@@ -5,6 +5,7 @@ metadata:
 
 spec:
   replicas: 3
+
   selector:
     matchLabels:
       app.kubernetes.io/name: python-webserver
@@ -13,6 +14,10 @@ spec:
       labels:
         app.kubernetes.io/name: python-webserver
     spec:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 759 # just pick a random user ID as longs as its numeric.
+      serviceAccountName: python-webserver-service-account
       containers:
         - image: docker.io/library/python-webserver:latest
           name: python-webserver
