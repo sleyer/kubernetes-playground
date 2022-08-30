@@ -3,3 +3,4 @@ resources:
   - service.yml
   - ingress.yml
   - serviceAccounts.yml
+  - podDisruptionBudget.yml

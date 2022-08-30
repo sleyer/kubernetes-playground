@@ -5,7 +5,11 @@ metadata:
 
 spec:
   replicas: 3
-
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 5
+      maxUnavailable: 1
   selector:
     matchLabels:
       app.kubernetes.io/name: python-webserver
@@ -13,6 +17,8 @@ spec:
     metadata:
       labels:
         app.kubernetes.io/name: python-webserver
+        someotherlabel: blub
+        depl: py-webserv
     spec:
       securityContext:
         runAsNonRoot: true
