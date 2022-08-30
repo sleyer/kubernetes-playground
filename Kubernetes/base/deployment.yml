@@ -24,3 +24,9 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - podAffinityTerm:
+                topologyKey: kubernetes.io/hostname
+              weight: 1
